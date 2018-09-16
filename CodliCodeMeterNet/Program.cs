@@ -20,7 +20,7 @@ namespace CodliCodeMeterNet
         private static void Start()
         {
             //Ustawiamy tytuł okna konsoli
-            Console.Title = "Codli Code Meter [v1.0]";
+            Console.Title = "Codli Code Meter [v1.1]";
             wl("\r\nWitaj w aplikacji Codli Code Meter!");
             wl("Wciśnij ENTER aby kontynuuowac...");
             var k = Console.ReadLine();
@@ -121,14 +121,52 @@ namespace CodliCodeMeterNet
 
             //Skanowanie ukończone!
             wl("\r\n\r\nUkończono skanowanie plików w katalogu!");
-            wl("Przeskanowane pliki: " + fileScaned);
-            wl("Pominięte pliki: " + filesSkiped);
-            wl("Liczba wierszy komentarza: " + commentsLines);
-            wl("Liczba znaków komentarza: " + commentsChars);
-            wl("Liczba wierszy kodu: " + codeLines);
-            wl("Liczba znaków kodu: " + codeChars);
-            wl("\r\n\r\nDziękujemy za skorzystanie z programu!");
-            wl("http://www.codli.eu\r\n");
+
+            //Teraz sprawdzamy czy programista chce poznać statystyki godzinowe
+            Console.Write("\r\nCzy chcesz wprowadzić więcej danych, aby poznać dokładne statystyki? [T/N]: ");
+            string readed = Console.ReadLine();
+            if (readed.ToUpper()[0] == 'T' || readed.ToUpper()[0] == 'Y')
+            {
+                Console.Write("\r\nWprowadź liczbę przepracowanych godzin: ");
+                float workedHours = int.Parse(Console.ReadLine());
+
+                Console.Write("\r\nWprowadź swoją stawkę godzinową: ");
+                float pricePerHour = int.Parse(Console.ReadLine());
+
+                wl("Przeskanowane pliki: " + fileScaned);
+                wl("Pominięte pliki: " + filesSkiped);
+                wl("Liczba wierszy komentarza: " + commentsLines);
+                wl("Liczba znaków komentarza: " + commentsChars);
+                wl("Liczba wierszy kodu: " + codeLines);
+                wl("Liczba znaków kodu: " + codeChars);
+                wl("Średnia liczba znaków w wierszu kodu: " + codeChars / codeLines + " znaki");
+
+                //I teraz podajemy dane statystyczne
+                wl("Liczba linii kodu na godzinę: " + Math.Round((codeLines / workedHours), 2) + " linii");
+                wl("Liczba linii komentarza na godzinę: " + Math.Round((commentsLines / workedHours), 2) + " linii");
+                wl("Liczba linii na godzinę: " + Math.Round((commentsLines + codeLines) / workedHours, 2) + " linii");
+                wl("Średnia cena za linię kodu: " + Math.Round((workedHours * pricePerHour) / (codeLines), 2) + " zł");
+                wl("Średnia cena za linię komentarza: " + Math.Round((workedHours * pricePerHour) / (commentsLines), 2) + " zł");
+                wl("Średnia cena za linię: " + Math.Round((workedHours * pricePerHour) / (commentsLines + codeLines), 2) + " zł");
+                wl("Średnia cena za znak kodu: " + Math.Round((workedHours * pricePerHour) / codeChars, 2) + " zł");
+
+                wl("\r\n\r\nDziękujemy za skorzystanie z programu!");
+                wl("http://www.codli.eu\r\n");
+            }
+
+            else
+            {
+                wl("Przeskanowane pliki: " + fileScaned);
+                wl("Pominięte pliki: " + filesSkiped);
+                wl("Liczba wierszy komentarza: " + commentsLines);
+                wl("Liczba znaków komentarza: " + commentsChars);
+                wl("Liczba wierszy kodu: " + codeLines);
+                wl("Liczba znaków kodu: " + codeChars);
+                wl("Średnia liczba znaków w wierszu kodu: " + codeChars / codeLines + " znaki");
+
+                wl("\r\n\r\nDziękujemy za skorzystanie z programu!");
+                wl("http://www.codli.eu\r\n");
+            }
 
             Console.ReadLine();
         }
