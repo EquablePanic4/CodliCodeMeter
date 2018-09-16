@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodliCodeMeter", "CodliCodeMeter\CodliCodeMeter.csproj", "{3052E1D3-5A49-4C2C-926D-61C5EAFB955A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodliCodeMeterNet", "CodliCodeMeterNet\CodliCodeMeterNet.csproj", "{9F72035C-8601-4C92-A643-2D15C80285AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3052E1D3-5A49-4C2C-926D-61C5EAFB955A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3052E1D3-5A49-4C2C-926D-61C5EAFB955A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3052E1D3-5A49-4C2C-926D-61C5EAFB955A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F72035C-8601-4C92-A643-2D15C80285AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F72035C-8601-4C92-A643-2D15C80285AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F72035C-8601-4C92-A643-2D15C80285AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F72035C-8601-4C92-A643-2D15C80285AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
